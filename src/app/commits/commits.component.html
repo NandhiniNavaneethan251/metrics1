@@ -1,0 +1,54 @@
+<div class="s">
+    <ng-select [(ngModel)]="selectedUserIds" style="margin-left: 75%; " class="s-control">
+
+        <ng-option *ngFor="let commit of commits" [value]="commit.UserId">{{commit.UserId}}</ng-option>
+    </ng-select><br>
+</div>
+<div *ngIf="selectedUserIds==null" style="margin-left: 10%;">
+    <div style="margin-left: 0%;">
+        <table style="border: rgba(168, 164, 164, 0.836);border-style: solid;border-width: 1px;width: 90%;margin-left: 0%;">
+            <tr style="border: rgba(168, 164, 164, 0.836);border-style: solid;border-width: 1px;border-top: 0;border-right: 0;border-left: 0;height: 3em;">
+                <th *ngFor="let col of columnDef">{{col}}</th>
+            </tr>
+
+            <tr *ngFor="let commit of commits" style="height: 4em;">
+                <td>{{commit.UserId}}</td>
+                <td>{{commit.Name}}</td>
+                <td>{{commit.RepoName}}</td>
+                <td>{{commit.CommitDate}}</td>
+                <td>{{commit.CommitMessage}}</td>
+            </tr>
+        </table>
+    </div>
+
+</div>
+
+
+<br>
+<div *ngIf="selectedUserIds!=null" style="margin-left: 10%;">
+    <div style="margin-left: 0%;">
+
+        <table style="border: rgba(168, 164, 164, 0.836);border-style: solid;border-width: 1px; width: 90%;margin-left: 0%;">
+            <tr style="height: 3em;">
+                <th>UserId</th>
+                <th>Name</th>
+                <th>RepoName</th>
+                <th>CommitDate</th>
+                <th>CommitMessage</th>
+            </tr>
+        </table>
+
+
+        <table *ngFor="let commit of commits" style="border: rgba(168, 164, 164, 0.836);border-style: solid;border-width: 1px;border-top: 0;width: 90%;margin-left: 0%;">
+
+            <tr *ngIf="commit.UserId==selectedUserIds;" style="height: 4em;">
+
+                <td style="width: 13%;">{{commit.UserId}}</td>
+                <td style="width: 13%;">{{commit.Name}}</td>
+                <td style="width: 17%;">{{commit.RepoName}}</td>
+                <td style="width: 23%;">{{commit.CommitDate}}</td>
+                <td>{{commit.CommitMessage}}</td>
+            </tr>
+        </table>
+    </div>
+</div>
