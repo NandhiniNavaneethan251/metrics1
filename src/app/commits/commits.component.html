@@ -1,5 +1,5 @@
 <div class="s">
-    <ng-select [(ngModel)]="selectedUserIds" style="margin-left: 75%; " class="s-control">
+    <ng-select [(ngModel)]="selectedUserIds" placeholder="UserId" style="margin-left: 75%; " class="s-control">
 
         <ng-option *ngFor="let commit of commits" [value]="commit.UserId">{{commit.UserId}}</ng-option>
     </ng-select><br>
@@ -8,7 +8,7 @@
 <div *ngIf="selectedUserIds==null" style="margin-left: 10%;">
     <div style="margin-left: 0%;">
         <table style="border: rgba(168, 164, 164, 0.836);border-style: solid;border-width: 1px;width: 90%;margin-left: 0%;">
-            <tr style="border: rgba(168, 164, 164, 0.836);border-style: solid;border-width: 1px;border-top: 0;border-right: 0;border-left: 0;height: 3em;">
+            <tr style="border: rgba(168, 164, 164, 0.836);border-style: solid;border-width: 1px;border-top: 0;border-right: 0;border-left: 0;height: 3em;background-color: rgb(223, 219, 219);">
                 <th *ngFor="let col of columnDef">{{col}}</th>
             </tr>
 
@@ -30,7 +30,7 @@
     <div style="margin-left: 0%;">
 
         <table style="border: rgba(168, 164, 164, 0.836);border-style: solid;border-width: 1px; width: 90%;margin-left: 0%;">
-            <tr style="height: 3em;">
+            <tr style="height: 3em;background-color: rgb(223, 219, 219);">
                 <th>UserId</th>
                 <th>Name</th>
                 <th>RepoName</th>
