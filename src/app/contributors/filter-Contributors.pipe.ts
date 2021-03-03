@@ -1,13 +1,12 @@
 import {Pipe, PipeTransform} from '@angular/core';
+import { IContributor } from '../contributor';
 @Pipe({
     name:'filterContributors'
 })
 export class filterContributorsPipe implements PipeTransform{
-    transform(contributors: any[],selectedUserIds:number): any[]{
-        if(!contributors) return [];
+    transform(contributors: IContributor[],selectedUserIds:number): IContributor[]{
+      
         if(!selectedUserIds) return contributors;
-        return contributors.filter(contributor=>{
-            return contributor.id.includes(selectedUserIds);
-        });
+        return contributors.filter(contributor=>contributor.id==selectedUserIds);
     }
 }

@@ -11,7 +11,10 @@ export class ContributorsComponent implements OnInit {
   public contributors=[] as any;
   public selectedUserIds!: number;
  
-  private readonly newProperty = this.contributors;
+  
+ 
+ 
+  //private readonly newProperty = this.contributors;
 
   constructor(private _contributorService:ContributorService) { }
 
@@ -19,8 +22,9 @@ export class ContributorsComponent implements OnInit {
     this._contributorService.getContributor()
       .subscribe(data => this.contributors = data,
                 );
-
   }
+ 
+ 
 
   columnDefs=["id","Login","RepoName"];
   
