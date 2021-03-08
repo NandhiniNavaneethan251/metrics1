@@ -14,6 +14,11 @@ import {MatTableModule} from '@angular/material/table';
 import {AgGridModule} from 'ag-grid-angular';
 import { filterContributorsPipe } from './contributors/filter-Contributors.pipe';
 import { filterCommitsPipe } from './commits/filter-Commits.pipe';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -31,7 +36,12 @@ import { filterCommitsPipe } from './commits/filter-Commits.pipe';
     NgSelectModule, 
     FormsModule,
     MatTableModule,
-    AgGridModule.withComponents([])
+    AgGridModule.withComponents([]),
+    MatInputModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatInputModule
   ],
   providers: [ContributorService,
   CommitService],
