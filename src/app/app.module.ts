@@ -13,7 +13,7 @@ import { CommitService } from './services/commits/commit.service';
 import {MatTableModule} from '@angular/material/table';
 import {AgGridModule} from 'ag-grid-angular';
 import { filterContributorsPipe } from './contributors/filter-Contributors.pipe';
-import { filterCommitsPipe } from './commits/filter-commits.pipe';
+import { filterCommitsPipe } from './commits/filter-Commits.pipe';
 
 @NgModule({
   declarations: [

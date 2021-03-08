@@ -9,7 +9,7 @@ import {CommitService} from 'src/app/services/commits/commit.service';
 })
 export class CommitsComponent implements OnInit {
   public commits=[] as any;
-  public selectedUserIds!: number;
+  public selectedUserIds!: string;
 
   private readonly newProperty = this.commits;
   constructor(private _commitService:CommitService) { }
