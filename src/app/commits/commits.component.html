@@ -2,8 +2,30 @@
     <ng-select [(ngModel)]="selectedUserIds" placeholder="UserId" style="margin-left: 75%; " class="s-control">
 
         <ng-option *ngFor="let commit of commits" [value]="commit.UserId">{{commit.UserId}}</ng-option>
-    </ng-select><br>
+    </ng-select>
+    <button class="btn btn-link pr-2" [disabled]="len>4" (click)="addDateFields()">Date Filter</button>
+    <div class="row text-dark">
+        <div class=" col-4 text-center" *ngFor="let dat of dateArray; let i=index ">
+
+            <mat-form-field class="">
+                <input matInput [matDatepicker]="picker" placeholder="From" (dateChange)="disableFunc()" [max]="dat.toDate" name="fromDate{{i}}" [(ngModel)]=dat.fromDate>
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field class="ml-1 ">
+                <input matInput [matDatepicker]="picker1" placeholder="To" [min]="dat.fromDate" name="toDate{{i}}" [(ngModel)]=dat.toDate (dateChange)="disableFunc()">
+                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field>
+            <mat-icon (click)="removeDatefield(i)" style="cursor: pointer; font-size:14px; font-weight:bold;padding-top: 6px; margin-left: 10px;"> close
+            </mat-icon>
+        </div>
+    </div>
+    <button class="btn btn-outline-light  m-1 " *ngIf="len>0" [disabled]="disabl" (click)="filterDate()">Apply
+        Date</button>
 </div>
+
 <br>
 <div style="margin-left: 10%;">
     <div style="margin-left: 0%;">

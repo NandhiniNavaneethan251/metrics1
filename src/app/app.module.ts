@@ -41,7 +41,8 @@ import {MatIconModule} from '@angular/material/icon';
     MatFormFieldModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatInputModule
+    MatInputModule,
+    MatIconModule
   ],
   providers: [ContributorService,
   CommitService],
